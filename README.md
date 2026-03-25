@@ -25,10 +25,10 @@ flutter run
 
 Приложение использует `StatefulWidget`, `TextField` и `ListView.builder`.
 
-
+```
 <img width="413" height="901" alt="image" src="https://github.com/user-attachments/assets/b691b962-7bc4-44b8-b2ac-33691ef297b6" />
 
-
+```
 Функциональность:
 - Введите задачу в поле и нажмите Add или Enter, чтобы добавить.
 - Нажмите иконку редактирования, чтобы открыть диалог и изменить текст задачи.
