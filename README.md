@@ -57,6 +57,8 @@ This project was created to:
 ## 📸 Screenshots
 
 <img width="413" height="901" alt="image" src="https://github.com/user-attachments/assets/b691b962-7bc4-44b8-b2ac-33691ef297b6" />
+<img width="999" height="710" alt="image" src="https://github.com/user-attachments/assets/2d4fe55d-f309-4c0b-9fb5-c126e26e10aa" />
+
 
 ---
 
