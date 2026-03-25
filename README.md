@@ -1,29 +1,41 @@
-# 📱 CRUD Flutter App
+# 📱 Task List (CRUD) Flutter App
 
-A clean and simple Flutter application demonstrating basic **CRUD operations** (Create, Read, Update, Delete). This project is designed as a practical example for learning how to work with data in Flutter apps.
+A minimal Flutter application for **creating, viewing, editing, and deleting tasks (CRUD)**. This project is suitable as a learning example to understand basic state management and list handling in Flutter.
 
 ---
 
 ## ✨ Features
 
-* ➕ Create new items
-* 📖 Read and display a list of items
-* ✏️ Update existing items
-* ❌ Delete items
-* 💡 Simple and beginner-friendly structure
+* ➕ Add a task (via **Add** button or Enter)
+* 📖 Display a list of tasks
+* ✏️ Edit a task through a dialog window
+* ❌ Delete a task with confirmation
 
 ---
 
-## 🛠️ Tech Stack
+## 🧱 Components Used
 
-* **Flutter**
-* **Dart**
+* `StatefulWidget` — state management
+* `TextField` — task input
+* `ListView.builder` — display list of tasks
 
 ---
 
-## 🚀 Getting Started
+## 📂 Project Structure
 
-### 1. Clone the repository
+```
+lib/
+ └── main.dart   # main application code
+pubspec.yaml     # dependencies
+```
+
+---
+
+## 🚀 How to Run
+
+> Flutter SDK must be installed
+
+### 1. Clone the project
 
 ```bash
 git clone https://github.com/Pavel-Zinkevich/crud_flutter.git
@@ -44,23 +56,38 @@ flutter run
 
 ---
 
-## 🎯 Purpose
+## 🎯 Purpose of the Project
 
 This project was created to:
 
 * Practice Flutter development
-* Understand CRUD logic in a mobile app
-* Build a foundation for more complex applications
+* Understand CRUD operations
+* Work with user input and lists
+
+---
+
+## ⚠️ Limitations
+
+* Data **is not saved** between app launches
+
+💡 Possible improvements:
+
+* Add local storage (e.g., `shared_preferences` or SQLite)
 
 ---
 
 ## 📸 Screenshots
 
-<img width="413" height="901" alt="image" src="https://github.com/user-attachments/assets/b691b962-7bc4-44b8-b2ac-33691ef297b6" />
-<img width="999" height="710" alt="image" src="https://github.com/user-attachments/assets/2d4fe55d-f309-4c0b-9fb5-c126e26e10aa" />
-
+<img width="413" height="901" alt="App Screenshot 1" src="https://github.com/user-attachments/assets/b691b962-7bc4-44b8-b2ac-33691ef297b6" />
+<img width="999" height="710" alt="App Screenshot 2" src="https://github.com/user-attachments/assets/2d4fe55d-f309-4c0b-9fb5-c126e26e10aa" />
 
 ---
 
-⭐ If you like this project, consider giving it a star!
+## 👨‍💻 Author
 
+**Pavel Zinkevich**
+[https://github.com/Pavel-Zinkevich](https://github.com/Pavel-Zinkevich)
+
+---
+
+⭐ If this project was helpful — give it a star!
