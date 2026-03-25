@@ -18,7 +18,6 @@ A clean and simple Flutter application demonstrating basic **CRUD operations** (
 
 * **Flutter**
 * **Dart**
-* (Optional: add backend or database if used, e.g. Firebase / REST API / SQLite)
 
 ---
 
