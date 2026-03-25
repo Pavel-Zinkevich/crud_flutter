@@ -45,21 +45,6 @@ flutter run
 
 ---
 
-## 📂 Project Structure
-
-```
-lib/
- ├── main.dart
- ├── screens/
- ├── widgets/
- ├── models/
- └── services/
-```
-
-*(Adjust this section if your structure is different)*
-
----
-
 ## 🎯 Purpose
 
 This project was created to:
