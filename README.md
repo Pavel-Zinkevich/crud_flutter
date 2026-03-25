@@ -68,11 +68,12 @@ This project was created to:
 
 ## ⚠️ Limitations
 
-* Data **is not saved** between app launches
+* Data **is saved** between app launches using `shared_preferences` (local key-value storage).
 
 💡 Possible improvements:
 
-* Add local storage (e.g., `shared_preferences` or SQLite)
+* Migrate to a structured local DB (e.g., SQLite / `sqflite`) for richer queries and relations.
+* Add export/import or cloud sync for cross-device persistence.
 
 ---
 

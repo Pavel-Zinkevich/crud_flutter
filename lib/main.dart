@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(const TaskApp());
@@ -34,8 +36,47 @@ class TaskPage extends StatefulWidget {
 
 class _TaskPageState extends State<TaskPage> {
   final TextEditingController _controller = TextEditingController();
-  final List<Task> _tasks = [];
+  List<Task> _tasks = [];
   int _nextId = 1;
+
+  static const String _kTasksKey = 'tasks';
+
+  @override
+  void initState() {
+    super.initState();
+    _loadTasks();
+  }
+
+  Future<void> _loadTasks() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = prefs.getString(_kTasksKey);
+    if (jsonString == null) return;
+    try {
+      final List<dynamic> decoded = jsonDecode(jsonString);
+      setState(() {
+        _tasks = decoded
+            .map((e) => Task(id: (e['id'] as int), title: (e['title'] as String)))
+            .toList();
+        _nextId = _tasks.isEmpty
+            ? 1
+            : _tasks.map((t) => t.id).reduce((a, b) => a > b ? a : b) + 1;
+      });
+    } catch (_) {
+      // If parsing fails, start with empty list
+      setState(() {
+        _tasks = [];
+        _nextId = 1;
+      });
+    }
+  }
+
+  Future<void> _saveTasks() async {
+    final prefs = await SharedPreferences.getInstance();
+    final jsonString = jsonEncode(
+      _tasks.map((t) => {'id': t.id, 'title': t.title}).toList(),
+    );
+    await prefs.setString(_kTasksKey, jsonString);
+  }
 
   void _addTask() {
     final text = _controller.text.trim();
@@ -44,12 +85,14 @@ class _TaskPageState extends State<TaskPage> {
       _tasks.add(Task(id: _nextId++, title: text));
       _controller.clear();
     });
+    _saveTasks();
   }
 
   void _deleteTask(int id) {
     setState(() {
       _tasks.removeWhere((t) => t.id == id);
     });
+    _saveTasks();
   }
 
   void _editTask(Task task) async {
@@ -91,6 +134,7 @@ class _TaskPageState extends State<TaskPage> {
       final index = _tasks.indexWhere((t) => t.id == task.id);
       if (index != -1) _tasks[index] = Task(id: task.id, title: newText);
     });
+    _saveTasks();
   }
 
   @override
